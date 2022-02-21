@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.app_d8ad55 {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.app_d8ad55 > *:first-child,
+.app_d8ad55 > *:first-child > *:first-child {
+  width: 500px;
+  height: 500px;
+  color: red;
+}
+/*# sourceMappingURL=index.c5a6d3af.css.map */

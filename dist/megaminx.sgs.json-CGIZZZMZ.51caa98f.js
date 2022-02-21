@@ -1,0 +1,2 @@
+var e=("undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:{}).parcelRequire946f;e.register("cULK3",(function(n,a){var d,i,f,l;d=n.exports,i="cachedSGSDataMegaminx",f=()=>e("j4HdH").cachedSGSDataMegaminx,Object.defineProperty(d,i,{get:f,set:l,enumerable:!0,configurable:!0});e("j4HdH");e("5QwIn"),e("wu2HC"),e("lWjEw"),e("98KNc"),e("cks0r")}));
+//# sourceMappingURL=megaminx.sgs.json-CGIZZZMZ.51caa98f.js.map

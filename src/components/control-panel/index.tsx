@@ -12,7 +12,7 @@ import { bufferMap } from '../../buffers.json';
 import { specialCasesMap } from '../../special-cases.json';
 import { useLocalStorage } from '../../hooks/use-local-storage';
 import { asyncInterval } from '../../utils';
-import styles from './styles.module.scss';
+import * as styles from './styles.module.scss';
 import { useAppContext } from '../app-context';
 import { CubeRotationControls } from './cube-rotation-controls';
 import { randomScrambleForEvent } from 'cubing/scramble';

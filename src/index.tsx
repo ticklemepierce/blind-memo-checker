@@ -3,8 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { ControlPanel } from './components/control-panel';
 import { MyTwistyPlayer } from './components/twisty-player'
 import { AppContextProvider } from './components/app-context';
-import styles from './styles.module.scss';
-
+import * as styles from './styles.module.scss';
 
 const App = () => {
   return (

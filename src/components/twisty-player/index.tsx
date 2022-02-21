@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import { useAppContext } from '../app-context';
 import { ElementWithShadow } from '../../types';
-import styles from './styles.module.scss';
+import * as styles from './styles.module.scss';
 
 export const MyTwistyPlayer = () => {
   const { twistyPlayer } = useAppContext();
