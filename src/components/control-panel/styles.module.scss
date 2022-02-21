@@ -1,0 +1,13 @@
+.button {
+  margin: 15px;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.controlsWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}

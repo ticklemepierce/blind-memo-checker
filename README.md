@@ -1,42 +1,74 @@
-# React pages boilerplate
+# React Parcel Example
 
-![Cover](cover.png)
-This boilerplate introduces a simple way for developing serverless React applications, which are perfect for serving from [Github Pages](https://pages.github.com/).
+A minimum viable React app with [Parcel Bundler](https://parceljs.org)
 
-## Technologies
+**What's inside?**
 
-- Typescript
-- [Mantine](https://mantine.dev/)
-- [Webpack@5](https://webpack.js.org/) as module bundler
-- [Eslint](http://eslint.org/) for linting
-- [Prettier](https://prettier.io/) for automated code formatting
-- [Jest](https://facebook.github.io/jest/) with [Enzyme](http://airbnb.io/enzyme/) for testing
+* `parcel-bundler`
+* `react`
+* `react-dom`
+* `babel-preset-react-app`
+* `autoprefixer`
 
 ## Getting started
 
-- Clone `git clone https://github.com/rtivital/react-pages-boilerplate` or [download](https://github.com/rtivital/react-pages-boilerplate/archive/master.zip) this repository.
-- (Optional) Run `nvm use`. This will ensure that you are running the supported version of Node.js. You can nvm installation instructions [here](https://github.com/creationix/nvm).
-- Install dependencies: `yarn`
-- Run the project: `npm start`
+Clone and install deps
 
-## Settings
+```
+git clone git@github.com:jaredpalmer/react-parcel-example.git
+cd react-parcel-example
+yarn
+yarn start
+```
 
-[settings.js](./settings.js) file includes all important settings that should be used to setup deployments to gh-pages:
+Then open `http://localhost:1234` and edit `index.js` and press save. Parcel
+will automagically hot reload you files whenever you make changes.
 
-- **title** – Base application title
-- **cname** – Adds CNAME file that allows to use custom domain names with gh-pages
-- **repoPath** – username.github.io/repoPath for react router to recognize gh-pages paths
-- **prerenderRoutes** – routes that should be prerendered before deploy
+## Building for Production
 
-## npm scripts
+```
+npm run build
+```
 
-- `npm start` – starts development server with webpack-dev-server
-- `npm test` – runs tests with Jest
-- `npm run build` – builds project to production
-- `npm run deploy` – builds and deploys project to Github pages
-- `npm run lint` – lints JavaScript files
-- `npm run prettier` – format js and jsx files with prettier
+This will compile your JS and copy your `index.html` to the `dist` folder which
+you can deploy wherever as a good ol' webpage.
 
-## Changelog
+## CSS
 
-See [releases section](https://github.com/rtivital/react-pages-boilerplate/releases/) to get information about new cool features added to the project.
+[Parcel uses PostCSS plugins to manage CSS assets](https://parceljs.org/transforms.html#postcss).
+I've included `autoprefixer` for vendor prefixing with the same setup as
+`create-react-app`. You can find and modify the PostCSS setup in `package.json`.
+If you'd rather keep your PostCSS setup in a dotfile, you can delete the
+`postcss` key from `package.json`, and place its contents in a `.postcssrc` file
+too.
+
+## Folder structure and relative paths
+
+Keeping everything in the root directory obviously won't scale past a point.
+Parcel is very flexible about folder structure, but there are a few gotchas.
+
+### Moving JS entry
+
+When you do move index.js just make sure to update the `<script>` tag in
+`index.html` so that it points to the correct relative path.
+
+For example, if you want to move `index.js` to `src/index.js`, you would need
+make the following change to `index.html`:
+
+```
+<   <script src="./index.js"></script>
+---
+>   <script src="./src/index.js"></script>
+```
+
+### Moving `index.html`
+
+If you want to move `index.html`, you will need to update your npm scripts in
+`package.json` with the new relative path.
+
+## Deployment
+
+Refer to the deployment guide in `create-react-app`, just note that you will
+need to account for the fact that Parcel builds out to a `dist` directory, while
+CRA builds to a `build` directory. You can make it identical by adding
+`--out-dir build` to both `start` and `build` npm tasks in `package.json`.
