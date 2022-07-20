@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import { Alg } from "cubing/alg";
 import { PuzzleID } from "cubing/twisty";
 import { experimental3x3x3KPuzzle, KPuzzle } from "cubing/kpuzzle";
@@ -16,6 +16,8 @@ import styles from './styles.module.scss';
 import { useAppContext } from '../app-context';
 import { CubeRotationControls } from './cube-rotation-controls';
 import { randomScrambleForEvent } from 'cubing/scramble';
+import { setDebug } from "cubing/search";
+import { Stackmat, Packet } from 'stackmat'
 
 const KPUZZLE_MAP = {
   '2x2x2': new KPuzzle(cube2x2x2KPuzzleDefinition),
@@ -34,7 +36,21 @@ export const ControlPanel = () => {
 
   const stateAlg = useRef<Alg>(new Alg(''));
 
-  randomScrambleForEvent('333');
+  useEffect(() => {
+    setDebug({forceStringWorker: true});
+
+    const stackmat = new Stackmat()
+
+    stackmat.on('started', (packet: Packet) => {
+        console.log('Timer started')
+    })
+
+    stackmat.on('stopped', (packet: Packet) => {
+        console.log('Timer stopped at: ' + packet.timeAsString)
+    })
+
+    stackmat.start()
+  });
 
   const performAlg = async (alg: Alg, tempo: number = 1): Promise<void> => {
     if (alg.toString() === '') {
@@ -106,6 +122,7 @@ export const ControlPanel = () => {
         if (selectedMethod === 'm2' && Object.prototype.hasOwnProperty.call(specialCasesMap.m2, edge)) {
           await performAlg(specialCasesMap.m2[edge]);
         } else {
+          console.log(conjugateMap[selectedMethod]);
           const conjugate = conjugateMap[selectedMethod].edges[edge];
           await performAlg(conjugate);
           await performAlg(swapMap[selectedMethod].edges, selectedMethod === 'op' ? 10 : 1);
@@ -141,9 +158,11 @@ export const ControlPanel = () => {
       <CubeRotationControls scramble={scramble} setScramble={setScramble}/>
       <form onSubmit={generateScramble}>
         <label>
-          Scramble
-          <input type="text" name='scramble' value={scramble.toString()} onChange={scrambleChange}/>
+          <p>Scramble</p>
+          <textarea name='scramble' value={scramble.toString()} onChange={scrambleChange}/>
         </label>
+        <br/>
+        <br/>
         <input type="submit" value="Generate" />
       </form>
       <form onSubmit={testMemoryLetters}>

@@ -8,7 +8,7 @@ const opSwaps = {
 
 const m2Swaps = {
   edges: "M2",
-  parity: "D' L2 D M2 D' L2 D",
+  parity: "D' r2 U R2' r2 U' r2' D",
 }
 
 export const swapMap = {
