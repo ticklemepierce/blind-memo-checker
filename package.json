@@ -48,7 +48,7 @@
     "@parcel/transformer-sass": "2.6.0",
     "cross-env": "5.1.1",
     "path-browserify": "1.0.1",
-    "postcss": "8.0.0",
+    "postcss": "8.2.1",
     "postcss-modules": "4.3.0"
   }
 }
