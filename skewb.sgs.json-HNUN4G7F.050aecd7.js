@@ -1,2 +1,0 @@
-function e(e,t,n,o){Object.defineProperty(e,t,{get:n,set:o,enumerable:!0,configurable:!0})}var t=("undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:{}).parcelRequire946f;t.register("2POcS",(function(n,o){e(n.exports,"sgsDataSkewb",(()=>t("e6Yg9").sgsDataSkewb)),e(n.exports,"skewbKPuzzleWithoutMOCached",(()=>t("e6Yg9").skewbKPuzzleWithoutMOCached));t("e6Yg9");t("5QwIn"),t("wu2HC"),t("lWjEw"),t("98KNc"),t("cks0r")}));
-//# sourceMappingURL=skewb.sgs.json-HNUN4G7F.050aecd7.js.map

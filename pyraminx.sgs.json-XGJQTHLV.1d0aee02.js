@@ -1,2 +1,0 @@
-var e=("undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:"undefined"!=typeof window?window:"undefined"!=typeof global?global:{}).parcelRequire946f;e.register("6ngpU",(function(n,a){var i,f,l,o;i=n.exports,f="sgsDataPyraminx",l=()=>e("5uXsx").sgsDataPyraminx,Object.defineProperty(i,f,{get:l,set:o,enumerable:!0,configurable:!0});e("5uXsx");e("5QwIn"),e("aKZ0D"),e("lWjEw"),e("98KNc"),e("cks0r")}));
-//# sourceMappingURL=pyraminx.sgs.json-XGJQTHLV.1d0aee02.js.map
