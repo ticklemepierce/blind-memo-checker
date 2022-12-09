@@ -50,5 +50,6 @@
     "path-browserify": "1.0.1",
     "postcss": "8.2.1",
     "postcss-modules": "4.3.0"
-  }
+  },
+  "homepage": "https://ticklemepierce.github.io/blind-memo-checker"
 }
